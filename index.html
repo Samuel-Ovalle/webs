@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://img.freepik.com/foto-gratis/elemento-artesania-mano-papel-corazon-rojo_53876-128923.jpg">
+    <title>Carta para mi amor</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            background: linear-gradient(#E073DF, #E028DC);
+            overflow: hidden;
+        }
+        .Propuesta{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .Propuesta img{
+            height: min-content;
+            width: 100vw;
+            position: relative;
+            top: 0;
+            z-index: 1;
+        }
+        .Propuesta h1{
+            color: #fff;
+            font-size: 6.5vw;
+            position: absolute;
+            top: 40%;
+            z-index: 2;
+        }
+        .Propuesta h2{
+            color: #fff;
+            position: absolute;
+            top: 42%;
+            z-index: 3;
+            font-size: 15vw;
+        }
+        img{
+            height: 10%;
+            position: absolute;
+            top: 10%;
+        }
+        img:nth-child(2){
+            top: 7%;
+            height: 25%;
+        }
+        img:nth-child(3){
+            top: 5%;
+            left: 65%;
+            height: 25%;
+        }
+        img:nth-child(4){
+            top: 75%;
+            height: 20%;
+        }
+        img:nth-child(5){
+            top: 77%;
+            left: 45%;
+            height: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="Propuesta">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_corazón.svg/640px-Heart_corazón.svg.png" alt="" class="corazon">
+        <h1>¿QUIERES SER MI NOVIA?</h1>
+        <h2>S+S</h2>
+    </div>
+    <img src="https://i.ibb.co/yVNHqdp/Whats-App-Image-2024-08-08-at-10-49-21-PM.jpg" alt="Whats-App-Image-2024-08-08-at-10-49-21-PM" border="0">
+    <img src="https://i.ibb.co/0DS1Vck/Whats-App-Image-2024-08-12-at-2-04-03-1.jpg" alt="Whats-App-Image-2024-08-12-at-2-04-03-1" border="0">
+    <img src="https://i.ibb.co/tYQQ6z0/Whats-App-Image-2024-08-20-at-10-19-20-PM.jpg" alt="Whats-App-Image-2024-08-20-at-10-19-20-PM" border="0">
+    <img src="https://i.ibb.co/Xxj518W/Whats-App-Image-2024-08-20-at-10-19-21-PM.jpg" alt="Whats-App-Image-2024-08-20-at-10-19-21-PM" border="0">
+    <script>
+        const corazon = document.querySelector(".corazon");
+        let increasing = true;
+
+        function animateHeart() {
+            let size = parseFloat(window.getComputedStyle(corazon).getPropertyValue("width"));
+
+            if (increasing) {
+                size += 2; // Incremento de tamaño
+                if (size >= window.innerWidth * 1.05) { // Tamaño máximo (25% del ancho de la ventana)
+                    increasing = false;
+                }
+            } else {
+                size -= 2; // Decremento de tamaño
+                if (size <= window.innerWidth * 1) { // Tamaño mínimo (15% del ancho de la ventana)
+                    increasing = true;
+                }
+            }
+
+            corazon.style.width = size + "px";
+        }
+
+        setInterval(animateHeart, 40);
+    </script>
+</body>
+</html>
